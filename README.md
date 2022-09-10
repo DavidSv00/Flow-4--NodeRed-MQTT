@@ -40,8 +40,13 @@ Para que este flow funcione, debes cumplir con los siguientes requisitos previos
 
 Para ejecutar este flow, es necesario lo siguiente
 1. Arrancar NodeRed con el comando `node-red`
-2. Importar el flow del repositorio
-3. Hacer clic en el boton Deploy
+2. Hacer un flow que reciba informacion por MQTT y grafique la información recibida por MQTT
+3. Enviar un JSON por MQTT que contenga los siguientes datos
+- ID, temp, hum
+- localhost
+- codigoIoT/MQTT/flow4
+- Mensaje mqtt
+4. Hacer clic en el boton Deploy
 
 ### Instrucciones de operación
 
