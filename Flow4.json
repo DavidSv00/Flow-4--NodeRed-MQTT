@@ -1,0 +1,255 @@
+[
+    {
+        "id": "17641ab378fb4b10",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "09e95f3140177f80",
+        "type": "mqtt in",
+        "z": "17641ab378fb4b10",
+        "name": "",
+        "topic": "codigoIoT/MQTT/flow4",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "bbe02c95bbb6c675",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "2696bd521d92ade5"
+            ]
+        ]
+    },
+    {
+        "id": "2696bd521d92ade5",
+        "type": "json",
+        "z": "17641ab378fb4b10",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "1705b591cf19a7bb",
+                "d51e0c9837e74bda"
+            ]
+        ]
+    },
+    {
+        "id": "1705b591cf19a7bb",
+        "type": "function",
+        "z": "17641ab378fb4b10",
+        "name": "Temperatura",
+        "func": "msg.payload = msg.payload.temp;\nmsg.topic = \"Temperatura\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 100,
+        "wires": [
+            [
+                "1d34de10833082f6",
+                "f93866044decba49"
+            ]
+        ]
+    },
+    {
+        "id": "d51e0c9837e74bda",
+        "type": "function",
+        "z": "17641ab378fb4b10",
+        "name": "Humedad",
+        "func": "msg.payload = msg.payload.hum;\nmsg.topic = \"Humedad\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "65fec2992fdf2984",
+                "f93866044decba49"
+            ]
+        ]
+    },
+    {
+        "id": "1d34de10833082f6",
+        "type": "ui_gauge",
+        "z": "17641ab378fb4b10",
+        "name": "",
+        "group": "19d7e99fd5f16b7c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "3",
+        "max": 10,
+        "colors": [
+            "#729fcf",
+            "#8ae234",
+            "#cc0000"
+        ],
+        "seg1": "17",
+        "seg2": "23",
+        "className": "",
+        "x": 850,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "65fec2992fdf2984",
+        "type": "ui_gauge",
+        "z": "17641ab378fb4b10",
+        "name": "",
+        "group": "26183073dd745b07",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 840,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f93866044decba49",
+        "type": "ui_chart",
+        "z": "17641ab378fb4b10",
+        "name": "",
+        "group": "d6021d3080d5366c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Historico local",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bbe02c95bbb6c675",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "19d7e99fd5f16b7c",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "4dea314f06a7e14a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "26183073dd745b07",
+        "type": "ui_group",
+        "name": "Humedad",
+        "tab": "4dea314f06a7e14a",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d6021d3080d5366c",
+        "type": "ui_group",
+        "name": "Historico",
+        "tab": "4dea314f06a7e14a",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4dea314f06a7e14a",
+        "type": "ui_tab",
+        "name": "Flow 4 - MQTT",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
