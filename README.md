@@ -20,9 +20,9 @@ Para realizar este flow necesitas lo siguiente
 
 En los siguientes enlaces puedes encontrar cursos en la plataforma de edu.codigoiot.com que te permitirán realiar las configuraciones necesarias
 
-- [Instalar VirtualBox y Ubuntu 20.4] (https://www.youtube.com/watch?v=rYkKjmwuot0)
-- [Instalacion de NodeRed en ubuntu 20.4] (https://www.arubacloud.com/tutorial/how-to-install-node-red-on-ubuntu-20-04.aspx)
-- [Introduccion a NodeRed] (https://www.codigoiot.com/curso/introduccion-a-node-red/)
+- [Instalar VirtualBox y Ubuntu 20.4](https://www.youtube.com/watch?v=rYkKjmwuot0)
+- [Instalacion de NodeRed en ubuntu 20.4](https://www.arubacloud.com/tutorial/how-to-install-node-red-on-ubuntu-20-04.aspx)
+- [Introduccion a NodeRed](https://www.codigoiot.com/curso/introduccion-a-node-red/)
 - [Introducción a Mosquitto](https://edu.codigoiot.com/course/view.php?id=851)
 
 ## Instrucciones
